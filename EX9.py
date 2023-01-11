@@ -33,3 +33,7 @@ for item in secret_pass:
     cookie = {"auth_cookie": auth_cookie}
     response1 = requests.get("https://playground.learnqa.ru/ajax/api/check_auth_cookie", params=cookie)
     print(response1.text)
+
+    response2 = response1.text
+    if response2 == "You are authorized":
+        print(f'Верный пароль {item}')
